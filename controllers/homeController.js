@@ -22,8 +22,13 @@ gustavoApp.controller('homeController', function($scope) {
                 contact_name: $scope.contactName, 
                 contact_email: $scope.contactEmail,
                 contact_message: $scope.contactMessage
-            });
+            
+            }).then(function(response) {
+                window.location.href = 'http://localhost:8887/index.html';
+            }, function(err){
+                alert(err);
+            });     
         
-        window.location.href = 'http://localhost:8887/index.html';
+        
     }
 });
